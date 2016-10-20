@@ -14,14 +14,13 @@ class JAL
     @end_port = end_port
     @to_email = to_email
     @file_name = "queries/#{@start_month}_#{@start_day}_#{@start_port}_#{@end_month}_#{@end_day}_#{@end_port}.log"
-    @driver = self.init_driver
+    self.init_driver
   end
 
   def init_driver
     @driver = Selenium::WebDriver.for :chrome
     @driver.manage.timeouts.implicit_wait = 30
     @driver.navigate.to 'https://www.jal.co.jp/'
-    @driver
   end
 
   def login
