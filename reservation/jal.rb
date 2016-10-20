@@ -1,7 +1,6 @@
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'gmail'
-require 'mini_magick'
 
 class JAL
 
