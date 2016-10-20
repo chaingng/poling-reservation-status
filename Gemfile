@@ -4,4 +4,5 @@ source "https://rubygems.org"
 
 gem 'selenium-webdriver', '2.44.0'
 gem 'nokogiri'
-# gem "rails"
+gem 'ruby-gmail'
+gem 'mini_magick'
