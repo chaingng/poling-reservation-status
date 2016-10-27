@@ -82,21 +82,30 @@ class JAL
     gmail_user_name = ENV["GMAIL_USER_NAME"]
     gmail_password = ENV["GMAIL_PW"]
 
-    gmail = Gmail.new(gmail_user_name, gmail_password)
-
-    message =
-    gmail.generate_message do
+    gmail = Gmail.connect(gmail_user_name, gmail_password)
+    gmail.deliver do
       to email_to
-      subject "JAL予約状況"
-      html_part do
-        content_type "text/html; charset=UTF-8"
+      subject 'JAL予約状況'
+      text_part do
         body result_body
       end
       add_file 'screen_shots/filename.png'
     end
-
-    gmail.deliver(message)
-    gmail.logout
+    # gmail = Gmail.new(gmail_user_name, gmail_password)
+    #
+    # message =
+    # gmail.generate_message do
+    #   to email_to
+    #   subject "JAL予約状況"
+    #   html_part do
+    #     content_type "text/html; charset=UTF-8"
+    #     body result_body
+    #   end
+    #   add_file 'screen_shots/filename.png'
+    # end
+    #
+    # gmail.deliver(message)
+    # gmail.logout
   end
 
   def same_result?(result)

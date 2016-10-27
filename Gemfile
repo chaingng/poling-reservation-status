@@ -4,4 +4,5 @@ source "https://rubygems.org"
 
 gem 'selenium-webdriver', '2.44.0'
 gem 'nokogiri'
-gem 'ruby-gmail'
+#gem 'ruby-gmail'
+gem 'gmail'
