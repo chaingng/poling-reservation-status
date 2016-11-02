@@ -18,6 +18,7 @@ class JAL
 
   def init_driver
     @driver = Selenium::WebDriver.for :chrome
+    @driver.manage.window.maximize
     @driver.manage.timeouts.implicit_wait = 30
     @driver.navigate.to 'https://www.jal.co.jp/'
   end
@@ -91,21 +92,6 @@ class JAL
       end
       add_file 'screen_shots/filename.png'
     end
-    # gmail = Gmail.new(gmail_user_name, gmail_password)
-    #
-    # message =
-    # gmail.generate_message do
-    #   to email_to
-    #   subject "JAL予約状況"
-    #   html_part do
-    #     content_type "text/html; charset=UTF-8"
-    #     body result_body
-    #   end
-    #   add_file 'screen_shots/filename.png'
-    # end
-    #
-    # gmail.deliver(message)
-    # gmail.logout
   end
 
   def same_result?(result)
