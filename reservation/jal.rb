@@ -33,6 +33,7 @@ class JAL
 
   def goto_milage_page
     @driver.find_element(:link, "マイレージ").click
+    sleep 1
     @driver.find_element(:css, "li.member-menu-item.member_menu_item-nth-1 > a").click
     sleep 1
     @driver.find_element(:css, "div.u-list-item").click
@@ -51,6 +52,9 @@ class JAL
 
     Selenium::WebDriver::Support::Select.new(@driver.find_element(:name, "departurePortCode2")).select_by(:text, @end_port)
     Selenium::WebDriver::Support::Select.new(@driver.find_element(:name, "arrivalPortCode2")).select_by(:text, @start_port)
+
+    # Selenium::WebDriver::Support::Select.new(@driver.find_element(:name, "boardTerm1")).select_by(:text, '5')
+    # Selenium::WebDriver::Support::Select.new(@driver.find_element(:name, "boardTerm2")).select_by(:text, '5')
 
     @driver.find_element(:css, "input.image.linkButtonA").click
   end
@@ -87,7 +91,8 @@ class JAL
     gmail.deliver do
       to email_to
       subject 'JAL予約状況'
-      text_part do
+      html_part do
+        content_type 'text/html; charset=UTF-8'
         body result_body
       end
       add_file 'screen_shots/filename.png'
