@@ -13,6 +13,6 @@ jal.login
 jal.goto_milage_page
 jal.input_flight_details
 result = jal.revervation_status
-jal.reservation_screenshot
+#jal.reservation_screenshot
 jal.record_and_send_email(result)
 jal.quit

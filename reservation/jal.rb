@@ -20,7 +20,7 @@ class JAL
 
   def init_driver
     @driver = Selenium::WebDriver.for :chrome
-    @driver.manage.window.maximize
+    #@driver.manage.window.maximize
     @driver.manage.timeouts.implicit_wait = 30
     @driver.navigate.to 'https://www.jal.co.jp/'
   end
@@ -97,7 +97,7 @@ class JAL
         content_type 'text/html; charset=UTF-8'
         body result_body
       end
-      add_file 'screen_shots/filename.png'
+      #add_file 'screen_shots/filename.png'
     end
   end
 
