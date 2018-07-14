@@ -7,6 +7,8 @@ gem 'selenium-webdriver', '2.44.0'
 gem 'nokogiri'
 gem 'gmail'
 gem "chromedriver-helper"
+gem 'yard', '~> 0.9.11'
+
 
 group :development, :test do
   gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
