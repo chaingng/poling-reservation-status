@@ -1,6 +1,8 @@
+# coding: utf-8
 require 'selenium-webdriver'
 require 'nokogiri'
 require 'gmail'
+require 'pry'
 
 class JAL
 
